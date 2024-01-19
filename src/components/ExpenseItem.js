@@ -1,10 +1,18 @@
+import "./ExpenseItem.css";
+
 function ExpenseItem() {
+  const expenseDate = new Date();
+  const expenseTitle = "Carinsurance";
+  const expenseAmount = 200;
+
   return (
-    <div>
+    <div className="expense-item">
       <h2>Expense Item!</h2>
-      <p>Food Rs 10</p>
-      <p>petrol RS 200</p>
-      <p>Movies RS 200</p>
+      <div className="expense-item__description">
+        <p>{expenseAmount}</p>
+        <p>{expenseDate.toISOString()}</p>
+        <p>{expenseTitle}</p>
+      </div>
     </div>
   );
 }
