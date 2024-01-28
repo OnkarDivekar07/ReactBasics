@@ -1,6 +1,5 @@
-import ExpenseItem from "./components/Expense/ExpenseItem";
-import ExpenseForm from "./components/Expense/ExpenseForm";
-import Card from "./components/UI/Card";
+import Expenses from "./components/Expense/Expenses";
+import "./components/Expense/Expenses.css";
 function App() {
   const expense = [
     {
@@ -24,31 +23,14 @@ function App() {
       Amount: "400",
     },
   ];
+  function addexpensedata(reciveddatafromexpenses) {
+    console.log("app.js");
+    console.log(reciveddatafromexpenses);
+  }
   return (
-    <Card>
-      <h2>Let's get started!</h2>
-      <ExpenseForm></ExpenseForm>
-      <ExpenseItem
-        Date={expense[0].Date}
-        Title={expense[0].Title}
-        Amount={expense[0].Amount}
-      ></ExpenseItem>
-      <ExpenseItem
-        Date={expense[1].Date}
-        Title={expense[1].Title}
-        Amount={expense[1].Amount}
-      ></ExpenseItem>
-      <ExpenseItem
-        Date={expense[2].Date}
-        Title={expense[2].Title}
-        Amount={expense[2].Amount}
-      ></ExpenseItem>
-      <ExpenseItem
-        Date={expense[3].Date}
-        Title={expense[3].Title}
-        Amount={expense[3].Amount}
-      ></ExpenseItem>
-    </Card>
+    <div className="new-expense">
+      <Expenses OnAppExpenses={addexpensedata} item={expense}></Expenses>
+    </div>
   );
 }
 

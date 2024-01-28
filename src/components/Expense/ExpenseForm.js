@@ -24,7 +24,10 @@ function ExpenseForm(props) {
       price: price,
       date: new Date(date),
     };
-    console.log(expensedata);
+    props.onSaveExpenseData(expensedata);
+    setTitle("");
+    setPrice("");
+    setDate("");
   }
 
   return (
@@ -34,6 +37,7 @@ function ExpenseForm(props) {
           <label htmlFor="ExpenseTitle">Expense Title</label>
           <input
             type="text"
+            value={title}
             onChange={titleHandler}
             placeholder="Enter the Title"
           />
@@ -42,6 +46,7 @@ function ExpenseForm(props) {
           <label htmlFor="Amount">Amount</label>
           <input
             type="number"
+            value={price}
             onChange={priceHandler}
             placeholder="Enter the Amount"
           />
@@ -51,6 +56,7 @@ function ExpenseForm(props) {
           <input
             type="date"
             onChange={dateHandler}
+            value={date}
             placeholder="Enter the date"
           />
         </div>
