@@ -1,9 +1,9 @@
 import "./ExpenseForm.css";
 
 function ExpenseForm() {
-  function formHandler() {
-    const form = document.getElementById("form");
-    console.log(form.value);
+  function titleHandler(event) {
+    //const form = document.getElementById("form");
+    console.log(event.target.value);
   }
 
   return (
@@ -11,7 +11,11 @@ function ExpenseForm() {
       <form id="form">
         <div className="new-expense__control">
           <label htmlFor="ExpenseTitle">Expense Title</label>
-          <input type="text" placeholder="Enter the Title" />
+          <input
+            type="text"
+            onClick={titleHandler}
+            placeholder="Enter the Title"
+          />
         </div>
         <div className="new-expense__control">
           <label htmlFor="Amount">Amount</label>
@@ -22,9 +26,7 @@ function ExpenseForm() {
           <input type="date" placeholder="Enter the date" />
         </div>
         <div className="new-expense__actions">
-          <button type="submit" onClick={formHandler}>
-            Add Expense
-          </button>
+          <button type="submit">Add Expense</button>
         </div>
       </form>
     </div>
