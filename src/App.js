@@ -3,25 +3,14 @@ import Expenses from "./components/Expense/Expenses";
 import "./components/Expense/Expenses.css";
 const dummyexpenses = [
   {
+    id: "11",
     Date: new Date(), // Assuming this is today's date
     Title: "bike Insurance",
     Amount: "100",
   },
-  {
-    Date: new Date(),
-    Title: "health Insurance",
-    Amount: "200",
-  },
-  {
-    Date: new Date(),
-    Title: "home Insurance",
-    Amount: "300",
-  },
-  {
-    Date: new Date(),
-    Title: "car Insurance",
-    Amount: "400",
-  },
+  { id: "12", Date: new Date(), Title: "health Insurance", Amount: "200" },
+  { id: "13", Date: new Date(), Title: "home Insurance", Amount: "300" },
+  { id: "14", Date: new Date(), Title: "car Insurance", Amount: "400" },
 ];
 
 function App() {

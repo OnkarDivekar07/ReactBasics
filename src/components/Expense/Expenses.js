@@ -19,6 +19,7 @@ function Expenses(props) {
       <ExpenseForm onSaveExpenseData={SaveExpenseDatahandler}></ExpenseForm>
       {props.item.map((expense) => (
         <ExpenseItem
+          key={expense.id}
           Date={expense.Date}
           Title={expense.Title}
           Amount={expense.Amount}
