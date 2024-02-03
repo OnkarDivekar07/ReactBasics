@@ -4,6 +4,7 @@ import ExpenseForm from './ExpenseForm';
 import FilterYears from './FilterYears';
 import Card from '../UI/Card';
 import './Expenses.css';
+import Chart from '../Chart/Chart';
 
 function Expenses(props) {
   const [filteredYear, setFilteredYear] = useState('');
@@ -28,6 +29,7 @@ function Expenses(props) {
     <Card>
       <h2>Let's get started!</h2>
       <ExpenseForm onSaveExpenseData={SaveExpenseDatahandler} />
+      <Chart></Chart>
       <FilterYears onFilterYear={handleFilterYear} />
       {filteredExpenses.length === 0 ? (
         <p>No expenses found for the selected year.</p>
